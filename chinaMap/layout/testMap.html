@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0; padding: 0;">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>集团首页</title>
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/china.js"></script>
+</head>
+<body style="height: 100%; margin: 0; padding: 0;">
+    <div id="shadow" style="position:absolute;height: calc(100% - 20px);width: 100%; margin: 0; padding: 0; left: -20px; top: 20px;"></div>
+</body>
+<script>
+    $(function () {
+        drawShadow();
+    });
+    function drawShadow(){
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('shadow'));
+
+        var option = {
+            backgroundColor: '#F4F4F4',
+            tooltip : {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                y: 'bottom',
+                x:'right',
+                data:['装机容量'],
+                textStyle: {
+                    color: '#F4F4F4'
+                }
+            },
+            geo: {
+                map: 'china',
+                label: {
+                    normal:{
+                        show: false,
+                        color:'#F4F4F4',
+                        position:'right'
+                    },
+                    emphasis: {
+                        show: false
+                    }
+                },
+                roam: false,
+                itemStyle: {
+                    normal: {
+                        areaColor: 'red',
+                        borderColor: '#50A4CC',
+                        borderWidth: 0
+                    }
+                }
+            },
+            series : [
+                {
+                    name: '装机容量',
+                    type: 'scatter',
+                    coordinateSystem: 'geo',
+                    label: {
+                        normal: {
+                            formatter: '{b}',
+                            position: 'top',
+                            show: true,
+                            offset:[0,-8],
+                            textBorderColor:'#939B9D',
+                            textBorderWidth:1.5
+                        },
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                {
+                    name: '装机容量',
+                    type: 'effectScatter',
+                    coordinateSystem: 'geo',
+                    tooltip:{
+                        enabled:false
+                    },
+                    showEffectOn: 'render',
+                    rippleEffect: {
+                        brushType: 'stroke'
+                    },
+                    hoverAnimation: true,
+                    label: {
+                        normal: {
+                            formatter: '{b}',
+                            position: 'right',
+                            show: false
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#23D865',
+                            shadowBlur: 10,
+                            shadowColor: '#fff'
+                        }
+                    },
+                    zlevel: 1
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+</script>
+</html>

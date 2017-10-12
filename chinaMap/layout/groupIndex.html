@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0; padding: 0;">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>集团首页</title>
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/china.js"></script>
+    <script src="../js/chinaShadow.js"></script>
+    <script src="../js/groupIndex.js"></script>
+</head>
+<style>
+    .infoDiv{
+        float: left;
+        width: 120px;
+        height: 40px;
+        margin-left: 10px;
+        margin-top: 60px;
+        text-align: center;
+        font-size: 12px;
+    }
+</style>
+<body style="height: 100%; margin: 0; padding: 0;">
+    <div id="main" style="height: 100%;width: 100%; margin: 0; padding: 0; background-color: transparent;z-index:1;"></div>
+    <div id="shadow" style="position:absolute; height: 100%;width: 100%; margin: 0; padding: 0; left: 0; top: 0"></div>
+    <div style="z-index: 10;position: fixed;top: 12%;left: 10%;width: 100px;height: 120px;">
+        <button style="height: 30px;width: 100%;background:#058ECC;border-radius: 3px;margin-top: 10px;border:none;"><label style="color:white;">分支机构</label></button>
+        <button style="height: 30px;width: 100%;background:#058ECC;border-radius: 3px;margin-top: 10px;border:none;"><label style="color:white;">各省装机容量</label></button>
+        <button style="height: 30px;width: 100%;background:#058ECC;border-radius: 3px;margin-top: 10px;border:none;"><label style="color:white;">各省标杆电价</label></button>
+    </div>
+    <div class="info" style="z-index: 10;position: fixed;top: 40%;left: 73%;width: 270px;height: 275px;">
+        <div class="infoDiv">
+            <img src="../imgs/总实时负荷.png"/><br/>
+            <label>总实时负荷</label><br/>
+            <label style="color:#058ECC; font-family: STHeiti;">55266.1</label>&nbsp;万千瓦
+        </div>
+        <div class="infoDiv">
+            <img src="../imgs/总装机容量.png"/><br/>
+            <label>总装机容量</label><br/>
+            <label style="color:#058ECC; font-family: STHeiti;">14042.52</label>&nbsp;万千瓦
+        </div>
+        <div class="infoDiv">
+            <img src="../imgs/火电容量.png"/><br/>
+            <label>火电容量</label><br/>
+            <label style="color:#058ECC; font-family: STHeiti;">9973.05</label>&nbsp;万千瓦
+        </div>
+        <div class="infoDiv">
+            <img src="../imgs/水电容量.png"/><br/>
+            <label>水电容量</label><br/>
+            <label style="color:#058ECC; font-family: STHeiti;">2681.36</label>&nbsp;万千瓦
+        </div>
+        <div class="infoDiv">
+            <img src="../imgs/风电容量.png"/><br/>
+            <label>风电容量</label><br/>
+            <label style="color:#058ECC; font-family: STHeiti;">1193.36</label>&nbsp;万千瓦
+        </div>
+        <div class="infoDiv">
+            <img src="../imgs/光伏容量.png"/><br/>
+            <label>光伏容量</label><br/>
+            <label style="color:#058ECC; font-family: STHeiti;">194.76</label>&nbsp;万千瓦
+        </div>
+    </div>
+</body>
+</html>
