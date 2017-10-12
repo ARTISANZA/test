@@ -126,7 +126,7 @@ function drawMap(){
                     show: false
                 }
             },
-            roam: true,
+            roam: false,
             itemStyle: {
                 normal: {
                     areaColor: '#058ECC',
